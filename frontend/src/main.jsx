@@ -4,11 +4,11 @@ import { render } from 'react-dom';
 
 import Hello from './components/hello.jsx';
 import World from './components/world.jsx';
+import CharaMaker from './components/CharaMaker.jsx';
 
 render(
     <div>
-        <Hello />
-        <World />
+        <CharaMaker/>
     </div>,
     document.getElementById('app')
 );
