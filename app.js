@@ -17,8 +17,13 @@ app.use(express.static('frontend/public'));
 app.get('/api/users', function(req, res, next) {
     connection.query('SELECT * from test.users', function (error, results, fields) {
         console.log(results);
-        res.write(JSON.stringify(results));
-        res.end();
+        if(error){
+            res.write(JSON.stringify({"error":"error"}));
+            res.end();
+        } else {
+            res.write(JSON.stringify(results));
+            res.end();
+        }
     });
 });
 
